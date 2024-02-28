@@ -1,0 +1,27 @@
+<main class="main">
+  <div class="content">
+    <ul class="livros">
+      <li *ngFor="let livro of livros">
+        <h2>Id: {{ livro.id }}</h2>
+        <h2>Título: {{ livro.titulo }}</h2>
+        <h2>Autor: {{ livro.autor }}</h2>
+        <h2>Ano publicação: {{ livro.ano_publicacao }}</h2>
+      </li>
+    </ul>
+    <div>
+      <h1>Cadastrar livro</h1>
+      <label for="novo-titulo">Título : </label>
+      <input id="novo-titulo" #novoTitulo />
+      <label for="novo-autor">Autor : </label>
+      <input id="novo-autor" #novoAutor />
+      <label for="novo-ano">Ano publicação : </label>
+      <input id="novo-ano" #novoAno />
+
+      <button type="button" (click)="cadastrar(novoTitulo.value, novoAutor.value, novoAno.value); novoTitulo.value = ''; novoAutor.value = ''; novoAno.value = '';">
+        Adicionar
+      </button>
+    </div>
+  </div>
+</main>
+
+<router-outlet />
